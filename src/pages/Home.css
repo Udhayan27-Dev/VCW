@@ -1,0 +1,617 @@
+/* Home Page Styles */
+
+/* 1. Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background, #FAFAFA);
+  padding: var(--spacing-xxl) 0 var(--spacing-xl);
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1.1;
+  color: var(--color-text-primary, #1A1A1A);
+  margin-bottom: var(--spacing-xs);
+}
+
+.hero-desc {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A4A4A);
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: var(--radius-lg, 8px);
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. Trust Bar */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+  text-align: center;
+}
+
+.trust-item p {
+  margin-top: var(--spacing-xs);
+  color: var(--color-text-secondary, #4A4A4A);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* 3. Featured Services — Redesigned Luxury Cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+.service-card-redesigned {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #ECE7E1;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.service-card-redesigned:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px -12px rgba(181, 128, 90, 0.22), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+  border-color: rgba(181, 128, 90, 0.45);
+}
+
+.service-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #F4F1EA;
+}
+
+.service-card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card-redesigned:hover .service-card-image-wrapper img {
+  transform: scale(1.07);
+}
+
+.service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
+  opacity: 0.7;
+  transition: opacity 0.4s ease;
+}
+
+.service-card-redesigned:hover .service-card-overlay {
+  opacity: 0.85;
+}
+
+.service-card-number {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-family: var(--font-heading, 'DM Serif Display', serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(26, 26, 26, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 2;
+}
+
+.service-card-tag {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1A1A1A;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.service-card-body {
+  padding: 2.25rem 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.service-card-title {
+  font-family: var(--font-heading, 'DM Serif Display', Georgia, serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin-bottom: 0.65rem;
+  line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.service-card-redesigned:hover .service-card-title {
+  color: var(--color-accent, #B5805A);
+}
+
+.service-card-desc {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #555555;
+  margin-bottom: 1.75rem;
+  flex: 1;
+}
+
+.service-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid #F2EFEA;
+}
+
+.service-card-cta {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #1A1A1A;
+  transition: color 0.3s ease;
+}
+
+.service-card-redesigned:hover .service-card-cta {
+  color: var(--color-accent, #B5805A);
+}
+
+.service-card-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #F6F4EF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1A1A1A;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card-redesigned:hover .service-card-arrow {
+  background: var(--color-accent, #B5805A);
+  color: #FFFFFF;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(181, 128, 90, 0.3);
+}
+
+/* 4. Quality Roadmap Journey Theme */
+.roadmap-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #666666;
+  max-width: 620px;
+  margin: 0.75rem auto 0;
+  line-height: 1.6;
+}
+
+.roadmap-wrapper {
+  position: relative;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+}
+
+/* Horizontal track line connecting nodes across the section */
+.roadmap-path-line {
+  position: absolute;
+  top: 48px;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    rgba(181, 128, 90, 0.15) 0%, 
+    rgba(181, 128, 90, 0.7) 30%, 
+    rgba(181, 128, 90, 0.7) 70%, 
+    rgba(181, 128, 90, 0.15) 100%
+  );
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.roadmap-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.roadmap-card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+/* Roadmap Node Circle Marker */
+.roadmap-node-marker {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3px solid var(--color-accent, #B5805A);
+  box-shadow: 0 0 0 6px rgba(181, 128, 90, 0.12), 0 10px 22px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent, #B5805A);
+  position: relative;
+  margin-bottom: 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+}
+
+.roadmap-node-badge {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  background: #1A1A1A;
+  color: #FFFFFF;
+  font-size: 0.675rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.roadmap-card-item:hover .roadmap-node-marker {
+  background: var(--color-accent, #B5805A);
+  color: #FFFFFF;
+  transform: scale(1.12);
+  box-shadow: 0 0 0 10px rgba(181, 128, 90, 0.22), 0 14px 30px rgba(181, 128, 90, 0.35);
+}
+
+/* Milestone Card Content */
+.roadmap-card-content {
+  width: 100%;
+  background: #FAFAFA;
+  border: 1px solid #ECE7E1;
+  border-radius: 18px;
+  padding: 1.75rem 1.4rem 1.5rem;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.roadmap-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.roadmap-phase-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--color-accent, #B5805A);
+  background: rgba(181, 128, 90, 0.12);
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+}
+
+.roadmap-step-num {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #999999;
+  letter-spacing: 0.05em;
+}
+
+.roadmap-card-title {
+  font-family: var(--font-heading, 'DM Serif Display', Georgia, serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin-bottom: 0.2rem;
+  line-height: 1.25;
+}
+
+.roadmap-card-tagline {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--color-accent, #B5805A);
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.roadmap-card-desc {
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.roadmap-card-accent-bar {
+  height: 3px;
+  width: 40px;
+  background: #E2DDD5;
+  border-radius: 3px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.roadmap-card-item:hover .roadmap-card-content {
+  background: #FFFFFF;
+  transform: translateY(-6px);
+  border-color: rgba(181, 128, 90, 0.4);
+  box-shadow: 0 16px 36px -8px rgba(181, 128, 90, 0.18), 0 6px 16px -4px rgba(0, 0, 0, 0.04);
+}
+
+.roadmap-card-item:hover .roadmap-card-accent-bar {
+  width: 100%;
+  background: var(--color-accent, #B5805A);
+}
+
+/* Mobile & Tablet Responsive Roadmap Timeline */
+@media (max-width: 1024px) {
+  .roadmap-path-line {
+    top: 0;
+    bottom: 0;
+    left: 33px;
+    right: auto;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, 
+      rgba(181, 128, 90, 0.15) 0%, 
+      rgba(181, 128, 90, 0.7) 30%, 
+      rgba(181, 128, 90, 0.7) 70%, 
+      rgba(181, 128, 90, 0.15) 100%
+    );
+  }
+
+  .roadmap-steps-grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .roadmap-card-item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .roadmap-node-marker {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .roadmap-card-content {
+    margin-top: 0.25rem;
+  }
+}
+
+/* 5. Process Steps */
+.process-wrapper {
+  position: relative;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md) 0;
+}
+
+.process-line {
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: var(--color-border, #E0E0E0);
+  z-index: 1;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  position: relative;
+  z-index: 2;
+}
+
+.process-step {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-accent, #B5805A);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: var(--spacing-md);
+  border: 4px solid var(--color-surface, #F5F5F0);
+}
+
+.step-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text-primary, #1A1A1A);
+}
+
+.step-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary, #4A4A4A);
+}
+
+/* 7. CTA Section */
+.cta-section {
+  background-color: #1A1A1A;
+  color: white;
+  padding: 100px 0;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: var(--spacing-md);
+  color: white;
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-lg);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  background-color: var(--color-accent, #B5805A);
+  color: white;
+  border: none;
+}
+
+.cta-btn:hover {
+  background-color: #a37250;
+}
+
+.cta-btn-outline {
+  border-color: var(--color-accent, #B5805A);
+  color: var(--color-accent, #B5805A);
+}
+
+.cta-btn-outline:hover {
+  background-color: var(--color-accent, #B5805A);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-container {
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: calc(var(--spacing-xxl) + 20px);
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  .process-line {
+    display: none;
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: 100px;
+  }
+  
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,129 @@
+.testimonial-carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #F5F3EF;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.carousel-viewport {
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  width: 100%;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #B5805A;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.author-info h4 {
+  margin: 0 0 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.author-info span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.carousel-arrow {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: #B5805A;
+  color: #fff;
+  border-color: #B5805A;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #B5805A;
+}
+
+@media (max-width: 768px) {
+  .testimonial-text {
+    font-size: 1.25rem;
+  }
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+}

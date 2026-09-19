@@ -1,0 +1,263 @@
+.catalogue-page {
+  padding-bottom: 4rem;
+}
+
+.page-hero {
+  background-color: var(--color-surface, #f9f9f9);
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-accent, #B5805A);
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3rem;
+  color: var(--color-text, #333);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.125rem;
+  color: var(--color-text-light, #666);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.catalogue-content {
+  padding: 4rem 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  position: relative;
+  height: 250px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--color-accent, #B5805A);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.product-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category-label {
+  font-size: 0.75rem;
+  color: #888;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.product-info h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-desc {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-weight: bold;
+  color: var(--color-text, #333);
+}
+
+.btn-enquire {
+  background: #25D366;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-enquire:hover {
+  background: #128C7E;
+}
+
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.gate-modal {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.gate-modal h2 {
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 1rem;
+}
+
+.gate-modal p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.gate-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gate-modal input {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn-primary {
+  background: var(--color-text, #333);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent, #B5805A);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text, #333);
+  border: 1px solid var(--color-text, #333);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--color-text, #333);
+  color: #fff;
+}
+
+.btn-skip {
+  background: none;
+  border: none;
+  color: #888;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.catalogue-cta {
+  background: var(--color-surface, #f9f9f9);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.catalogue-cta h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.catalogue-cta p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .catalogue-cta h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
