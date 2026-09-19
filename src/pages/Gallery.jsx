@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/UI/ScrollReveal';
 import FilterTabs from '../components/UI/FilterTabs';
 import Lightbox from '../components/UI/Lightbox';
+import { getAssetUrl } from '../utils/imageUtils';
 import './Gallery.css';
 
 const TABS = [
@@ -128,7 +129,7 @@ const Gallery = () => {
                   className={`gallery-item ${item.spanRow === 2 ? 'span-2' : ''}`}
                   onClick={() => openLightbox(index)}
                 >
-                  <img src={item.image} alt={item.title} />
+                  <img src={getAssetUrl(item.image)} alt={item.title} />
                   <div className="gallery-overlay">
                     <div className="overlay-content">
                       <h3>{item.title}</h3>
@@ -145,7 +146,7 @@ const Gallery = () => {
 
       {lightboxIndex >= 0 && (
         <Lightbox
-          images={filteredItems.map(item => item.image)}
+          images={filteredItems.map(item => getAssetUrl(item.image))}
           currentIndex={lightboxIndex}
           onClose={closeLightbox}
           onNext={() => setLightboxIndex((prev) => (prev + 1) % filteredItems.length)}

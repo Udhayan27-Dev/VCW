@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageHero from '../components/UI/PageHero';
 import ScrollReveal from '../components/UI/ScrollReveal';
 import Counter from '../components/UI/Counter';
+import { getAssetUrl } from '../utils/imageUtils';
 import './About.css';
 
 const About = () => {
@@ -20,7 +21,7 @@ const About = () => {
           <div className="story-grid">
             <ScrollReveal direction="right" className="story-image-col">
               <div className="image-wrapper">
-                <img src="/images/hero/hero-main.png" alt="VCW Curtains Workmanship" className="story-image" />
+                <img src={getAssetUrl('/images/hero/hero-main.png')} alt="VCW Curtains Workmanship" className="story-image" />
                 <div className="copper-border"></div>
               </div>
             </ScrollReveal>

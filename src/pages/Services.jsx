@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageHero from '../components/UI/PageHero';
 import ScrollReveal from '../components/UI/ScrollReveal';
+import { getAssetUrl } from '../utils/imageUtils';
 import './Services.css';
 
 const AccordionItem = ({ title, children, isOpen, onClick }) => {
@@ -191,7 +192,7 @@ const Services = () => {
               <ScrollReveal key={service.id} delay={index * 0.1}>
                 <div id={service.id} className="service-card">
                   <div className="service-image-wrapper">
-                    <img src={service.image} alt={service.title} className="service-image" />
+                    <img src={getAssetUrl(service.image)} alt={service.title} className="service-image" />
                     <div className="service-overlay">
                       <Link to="/contact" className="btn btn-primary">Get Quote</Link>
                     </div>

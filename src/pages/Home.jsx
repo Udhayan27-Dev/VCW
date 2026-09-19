@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Counter from '../components/UI/Counter';
 import ScrollReveal from '../components/UI/ScrollReveal';
 import TestimonialCarousel from '../components/UI/TestimonialCarousel';
+import { getAssetUrl } from '../utils/imageUtils';
 import './Home.css';
 
 const Home = () => {
@@ -128,7 +129,7 @@ const Home = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <img src="/images/hero/hero-main.png" alt="Luxurious Curtains" className="hero-image" />
+            <img src={getAssetUrl('/images/hero/hero-main.png')} alt="Luxurious Curtains" className="hero-image" />
           </motion.div>
         </div>
       </section>
@@ -174,7 +175,7 @@ const Home = () => {
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Link to={service.link} className="service-card-redesigned">
                   <div className="service-card-image-wrapper">
-                    <img src={service.image} alt={service.title} loading="lazy" />
+                    <img src={getAssetUrl(service.image)} alt={service.title} loading="lazy" />
                     <div className="service-card-overlay" />
                     <span className="service-card-number">0{index + 1}</span>
                     <span className="service-card-tag">{service.tag}</span>

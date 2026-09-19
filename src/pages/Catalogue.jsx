@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/UI/ScrollReveal';
 import FilterTabs from '../components/UI/FilterTabs';
+import { getAssetUrl } from '../utils/imageUtils';
 import './Catalogue.css';
 
 const TABS = [
@@ -197,7 +198,7 @@ const Catalogue = () => {
                 >
                   <div className="product-image">
                     {product.badge && <span className="product-badge">{product.badge}</span>}
-                    <img src={product.image} alt={product.title} />
+                    <img src={getAssetUrl(product.image)} alt={product.title} />
                   </div>
                   <div className="product-info">
                     <span className="category-label">{product.categoryLabel}</span>
